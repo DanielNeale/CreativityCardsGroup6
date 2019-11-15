@@ -41,6 +41,7 @@ public class Movement : MonoBehaviour
             moveDirection.x = -1;
         }
 
+        moveDirection.Normalize();
         man.velocity = (moveDirection * manSpeed);
         man.transform.LookAt(man.transform.position + moveDirection);
 
@@ -72,6 +73,7 @@ public class Movement : MonoBehaviour
                 dogMoveDirection.x = -1;
             }
 
+            dogMoveDirection.Normalize();
             dog.velocity = (dogMoveDirection * dogSpeed);
             dog.transform.LookAt(dog.transform.position + dogMoveDirection);
         }
