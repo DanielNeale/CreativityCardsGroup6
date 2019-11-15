@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
     public float leadLength;
     float coolDown;
 
+    public bool dogTaken;
+
     void Start()
     {
         man = GetComponent<Rigidbody>();
@@ -73,9 +75,15 @@ public class Movement : MonoBehaviour
                 dogMoveDirection.x = -1;
             }
 
-            dogMoveDirection.Normalize();
-            dog.velocity = (dogMoveDirection * dogSpeed);
-            dog.transform.LookAt(dog.transform.position + dogMoveDirection);
+            if(!dogTaken)
+            {
+                dogMoveDirection.Normalize();
+                dog.velocity = (dogMoveDirection * dogSpeed);
+                dog.transform.LookAt(dog.transform.position + dogMoveDirection);
+               
+            }
+            
+            
         }
 
         else

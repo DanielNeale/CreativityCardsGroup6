@@ -17,6 +17,9 @@ public class AnnoyingChildScript : MonoBehaviour
 
     public bool gotDog;
 
+    public Movement movementScript;
+
+    public GameObject spot;
 
     void Start()
     {
@@ -27,6 +30,8 @@ public class AnnoyingChildScript : MonoBehaviour
         body = this.gameObject.transform.GetChild(0).gameObject;
       
         fallenOver = this.gameObject.transform.GetChild(1).gameObject;
+
+        movementScript = Player.GetComponent<Movement>();
     }
 
 
@@ -42,6 +47,7 @@ public class AnnoyingChildScript : MonoBehaviour
             Vector3 newPos = transform.position + dirToPlayer;
 
             Enemy.SetDestination(newPos);
+            Dog.transform.position = spot.transform.position;
         }
         
     }
@@ -61,6 +67,13 @@ public class AnnoyingChildScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             // player smacks 
+            if(gotDog == true)
+            {
+                gotDog = false;
+                movementScript.dogTaken = false;
+                Dog.transform.position = Player.transform.position;
+            }
+            
             transform.DetachChildren();
             fallenOver.SetActive(true);
             Destroy(body);
@@ -71,6 +84,7 @@ public class AnnoyingChildScript : MonoBehaviour
         {
             // grabbed dog 
             gotDog = true;
+            movementScript.dogTaken = true;
 
         }
     }
