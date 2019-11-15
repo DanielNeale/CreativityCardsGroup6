@@ -7,6 +7,7 @@ public class AnnoyingChildScript : MonoBehaviour
 {
 
     private GameObject Player;
+    private GameObject Dog;
 
     NavMeshAgent Enemy;
 
@@ -14,11 +15,14 @@ public class AnnoyingChildScript : MonoBehaviour
 
     private GameObject fallenOver;
 
+    public bool gotDog;
+
 
     void Start()
     {
         Enemy = GetComponent<NavMeshAgent>();
-        Player = GameObject.FindGameObjectWithTag("Dog");
+        Dog = GameObject.FindGameObjectWithTag("Dog");
+        Player = GameObject.FindGameObjectWithTag("Player");
 
         body = this.gameObject.transform.GetChild(0).gameObject;
       
@@ -28,7 +32,18 @@ public class AnnoyingChildScript : MonoBehaviour
 
     void Update()
     {
-        Enemy.SetDestination(Player.transform.position);
+        if(!gotDog)
+        {
+            Enemy.SetDestination(Dog.transform.position);
+        }
+        else
+        {
+            Vector3 dirToPlayer = transform.position - Player.transform.position;
+            Vector3 newPos = transform.position + dirToPlayer;
+
+            Enemy.SetDestination(newPos);
+        }
+        
     }
 
     
@@ -50,6 +65,12 @@ public class AnnoyingChildScript : MonoBehaviour
             fallenOver.SetActive(true);
             Destroy(body);
             Destroy(this.gameObject);
+
+        }
+        else if (other.gameObject.tag == "Dog")
+        {
+            // grabbed dog 
+            gotDog = true;
 
         }
     }
