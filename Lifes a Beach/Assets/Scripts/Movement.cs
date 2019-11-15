@@ -79,7 +79,7 @@ public class Movement : MonoBehaviour
         else
         {            
             dog.transform.LookAt(new Vector3(man.transform.position.x, dog.transform.position.y, man.transform.position.z));
-            dog.velocity = (dog.transform.forward * dogSpeed);
+            dog.velocity = (dog.transform.forward * manSpeed);
         }
 
         if (Vector3.Distance(man.transform.position, dog.transform.position) > leadLength)

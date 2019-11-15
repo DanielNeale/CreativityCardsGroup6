@@ -26,19 +26,24 @@ public class DogLead : MonoBehaviour
                 leadLine.SetPosition(i , man.position);
             }
 
-            if (i - 1 == leadLine.positionCount)
+            else if (i + 1 == leadLine.positionCount)
             {
                 leadLine.SetPosition(i, dog.position);
             }
 
             else
             {
-                float point = i / leadLine.positionCount;
-                float sag = (maxDistance - currentDistance) / 5;
-                Vector3 newPos = new Vector3(currentDistance * point,
-                                             man.position.y - ((man.position.y - dog.position.y) / sag),
-                                             man.position.z - ((man.position.z - dog.position.z) / point));
-                Debug.Log(man.position.x - ((man.position.x - dog.position.x) / point));
+                float position = i;               
+                float point = position / leadLine.positionCount;
+
+                int centerPos = Mathf.FloorToInt((leadLine.positionCount + 1) / 2);
+                int centerDist = Mathf.FloorToInt(Mathf.Sqrt(Mathf.Pow(centerPos - (i + 1), 2)));
+                float sag = ((maxDistance - currentDistance) / 5 - (Mathf.Pow(centerDist , 2) * ((maxDistance - currentDistance) / 100)));
+                
+                Vector3 newPos = new Vector3(man.position.x - ((man.position.x - dog.position.x) * point),
+                                             man.position.y - (man.position.y - dog.position.y) - sag,
+                                             man.position.z - ((man.position.z - dog.position.z) * point));
+                leadLine.SetPosition(i, newPos);
             }
         }        
     }
