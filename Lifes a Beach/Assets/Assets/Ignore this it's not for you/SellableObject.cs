@@ -4,8 +4,9 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Default Object", menuName = "Inventory System/Items/Common")]
 
-public class CommonObject : ItemObject
+public class SellableObject : ItemObject
 {
+    public int Value;
     public void Awake()
     {
         type = ItemRarity.Common;
