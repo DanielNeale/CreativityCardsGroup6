@@ -6,6 +6,9 @@ public class CameraChangeScript : MonoBehaviour
 {
     
     public GameObject vCam;
+    public GameObject player;
+    public GameObject metalDetector;
+   
 
 
     private void Start()
@@ -16,11 +19,16 @@ public class CameraChangeScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         vCam.SetActive(true);
+        player.GetComponent<MeshRenderer>().enabled = false;
+        metalDetector.GetComponent<MeshRenderer>().enabled = false;
+       
 
     }
 
     private void OnTriggerExit(Collider other)
     {
         vCam.SetActive(false);
+        player.GetComponent<MeshRenderer>().enabled = true;
+        metalDetector.GetComponent<MeshRenderer>().enabled = true;
     }
 }
