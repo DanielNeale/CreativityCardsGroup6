@@ -1,0 +1,76 @@
+﻿Bios and Dialogue
+
+
+
+
+
+
+
+
+Shopkeeper 1- People upgrades
+* Sinéad MacMahon
+* Female
+* Former pirate, retired after The Accident™ that made her lose her eye
+* Imports her exotic goods from her pirate contacts.
+* Can play the accordion
+
+
+Player Character(Human) Dialogue
+Introduction- This is where I can buy things, right? (Response: Yar, I be importin’ goods from all over the world)
+Flirt- I love a woman with an eyepatch
+Goodbye- I’ll come back with more money!
+
+
+Merchant Dialogue
+Welcoming- Welcome aboard!
+Purchasing- Thank ye kindly 
+Purchasing (not enough money)- I’ll be needing more doubloons if ye want to purchase that
+Flirt (receptive)- Keep talkin’ like that and i’ll 
+Flirt (been flirting with other shopkeeper)- Don’t try to parley ye way out of this, I’ve seen ye been makin’ eyes at Frederick
+Leaving- Be seein’ ye!
+
+
+
+
+Shopkeeper 2- Selling
+* Frederick Pesce
+* Male
+* Fisherman
+* Don’t ask what he does with the junk he buys
+* Owns a cat named Biscuits
+* Rumours going around that he’s actually a mermaid
+Player Character (Human) Dialogue
+Introduction- Wanna buy my trash? (Response: Absolutely. Just don’t ask what I plan on doing with it)
+Flirt- Interested in my junk, are you?
+Goodbye- See you later!
+
+
+Merchant Dialogue
+Welcoming- You have more trash?
+Selling- Some may call this junk, but I think it’s treasure
+Flirt (receptive)- Of course I am! Oh.. you’re talking about… Oh…. 
+Flirt (been flirting with other shopkeeper)- I don’t share my junk with others.
+Leaving- Come back with more trash!
+
+
+
+
+Shopkeeper 3- Dog upgrades
+* Priscilla
+* Bulldog
+* Can a dog even own a shop? Is that legal?
+* Her owner works in the back making the upgrades
+
+
+Player Character (Dog) Dialogue
+Introduction- Bark.exe
+Dog Flirt- Woof_Woof.jpeg
+Goodbye- Bork.txt
+
+
+Merchant Dialogue
+Welcoming- Bark!
+Purchasing- Bork!
+Purchasing (not enough money)- *whine*
+Dog Flirt (receptive)- *blushes* Woof….
+Leaving- Bork Bork!!
