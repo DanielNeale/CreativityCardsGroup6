@@ -28,7 +28,7 @@ public class ClosestDig : MonoBehaviour
 	
 	void BeepIntensify()
 	{
-		if (closestDigDis < 5) {
+		if (closestDigDis < 10) {
 			StartCoroutine(startDetect());
 		}
 	}
@@ -39,7 +39,7 @@ public class ClosestDig : MonoBehaviour
 		{
 			beenPlayed = true;
 			detectSource.PlayOneShot(detectBeep);
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(closestDigDis/5);
 			beenPlayed = false;
 		}
 	}
