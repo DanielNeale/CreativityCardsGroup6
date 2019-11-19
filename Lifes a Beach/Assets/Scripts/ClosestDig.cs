@@ -12,6 +12,9 @@ public class ClosestDig : MonoBehaviour
 	public AudioSource detectSource;
 	public AudioClip detectBeep;
 
+
+    
+
 	void Start()
 	{
 	}
@@ -43,4 +46,8 @@ public class ClosestDig : MonoBehaviour
 			beenPlayed = false;
 		}
 	}
+
+
+
+
 }

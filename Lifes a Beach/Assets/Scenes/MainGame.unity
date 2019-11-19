@@ -2080,7 +2080,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772841216}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1
@@ -2402,7 +2402,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a5b90bebd2446a84a8fcb30a72ac7059, type: 2}
+  - {fileID: 2100000, guid: af27fc8a459e5f743a06c0c2cadfa909, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3068,7 +3068,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a5b90bebd2446a84a8fcb30a72ac7059, type: 2}
+  - {fileID: 2100000, guid: af27fc8a459e5f743a06c0c2cadfa909, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4486,8 +4486,9 @@ GameObject:
   - component: {fileID: 2107273697}
   - component: {fileID: 2107273701}
   - component: {fileID: 2107273700}
-  - component: {fileID: 2107273699}
   - component: {fileID: 2107273698}
+  - component: {fileID: 2107273699}
+  - component: {fileID: 2107273703}
   - component: {fileID: 2107273702}
   m_Layer: 0
   m_Name: MetalDetector
@@ -4517,7 +4518,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107273696}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecdbf986b9693c244a391729ce34973f, type: 3}
   m_Name: 
@@ -4528,7 +4529,7 @@ MonoBehaviour:
   beepDelay: 100
   beenPlayed: 0
   detectSource: {fileID: 2107273702}
-  detectBeep: {fileID: 8300000, guid: 1c8a5d96a2c1241459037910328653bc, type: 3}
+  detectBeep: {fileID: 8300000, guid: 9657c93c4e2d6d348a1797f6fb7315ee, type: 3}
 --- !u!65 &2107273699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4597,7 +4598,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1c8a5d96a2c1241459037910328653bc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9657c93c4e2d6d348a1797f6fb7315ee, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4683,6 +4684,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2107273703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107273696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5fc63dca7ab6464abf6ad8239409fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closestDigObj: {fileID: 0}
+  closestDigDis: 0
+  isBeeping: 0
+  progressToNextBeep: 0
+  beep: {fileID: 2107273702}
 --- !u!1 &2126442884
 GameObject:
   m_ObjectHideFlags: 0
@@ -5756,7 +5774,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2.38
-  m_Speed: 3.5
+  m_Speed: 5.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -5783,6 +5801,7 @@ MonoBehaviour:
   gotDog: 0
   movementScript: {fileID: 0}
   spot: {fileID: 879483527}
+  distance: 0
 --- !u!54 &3216935843640754833
 Rigidbody:
   m_ObjectHideFlags: 0

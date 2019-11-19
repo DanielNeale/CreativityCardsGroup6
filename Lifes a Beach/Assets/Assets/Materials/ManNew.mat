@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Man
-  m_Shader: {fileID: 4800000, guid: 0c0954241118c7348b9c3eccaaa58e1c, type: 3}
+  m_Name: ManNew
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -61,33 +61,17 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 36
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-<<<<<<< HEAD
-    - _RimAmount: 0.75
-    - _RimThreshold: 0.1
-    - _SmoothValue: 0.01
-=======
-    - _RimAmount: 0.716
-    - _RimThreshold: 0.1
-    - _SmoothValue: 0
->>>>>>> 135db1bef2b0610a100ccbe0a65108d55827ffcf
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
-<<<<<<< HEAD
-    - _Color: {r: 0.11494303, g: 0.5943396, b: 0.1324155, a: 1}
-=======
-    - _Color: {r: 0.08677466, g: 0.2830189, b: 0.124154516, a: 1}
->>>>>>> 135db1bef2b0610a100ccbe0a65108d55827ffcf
+    - _Color: {r: 0.06804083, g: 0.41509432, b: 0.0019579967, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}

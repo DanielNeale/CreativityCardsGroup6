@@ -16,9 +16,9 @@ public class MessDistance : MonoBehaviour
     {
         distanceAway = Vector3.Distance(playerObj.transform.position, transform.position);
 
-        if (playerObj.GetComponent<ClosestDig>().closestDigDis > distanceAway || playerObj.GetComponent<ClosestDig>().closestDigObj == null)
+        if (playerObj.GetComponent<ClosestDig2>().closestDigDis > distanceAway || playerObj.GetComponent<ClosestDig2>().closestDigObj == null)
         {
-            playerObj.GetComponent<ClosestDig>().closestDigObj = this.gameObject;
+            playerObj.GetComponent<ClosestDig2>().closestDigObj = this.gameObject;
 
         }
     }

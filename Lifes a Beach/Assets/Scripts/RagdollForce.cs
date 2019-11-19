@@ -13,11 +13,12 @@ public class RagdollForce : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         cj = GetComponent<CharacterJoint>();
-        rb.AddForce(transform.forward * 4000f);
-        rb.AddForce(transform.right * 100f);
+        rb.AddForce(-transform.up * 9000f);
+        rb.AddForce(transform.forward * 9000f);
 
 
-        Invoke("DeleteSpine", 0.1f);
+
+        //Invoke("DeleteSpine", 0.1f);
     }
 
     // Update is called once per frame

@@ -21,6 +21,8 @@ public class AnnoyingChildScript : MonoBehaviour
 
     public GameObject spot;
 
+    public float distance = 0f;
+
     void Start()
     {
         Enemy = GetComponent<NavMeshAgent>();
@@ -37,6 +39,7 @@ public class AnnoyingChildScript : MonoBehaviour
 
     void Update()
     {
+        distance = Vector3.Distance(Player.transform.position, Dog.transform.position);
         if(!gotDog)
         {
             Enemy.SetDestination(Dog.transform.position);
@@ -48,6 +51,31 @@ public class AnnoyingChildScript : MonoBehaviour
 
             Enemy.SetDestination(newPos);
             Dog.transform.position = spot.transform.position;
+
+            if(distance > 11.0f)
+            {
+                Enemy.speed = 0f;
+                //drag player
+                movementScript.DraggedByKid();
+            }
+            else if (distance > 10)
+            {
+                Enemy.speed = 0.5f;
+            }
+            else if (distance > 9)
+            {
+                Enemy.speed = 2.0f;
+            }
+            else if (distance > 7)
+            {
+                Enemy.speed = 3.0f;
+            }
+            else
+            {
+                Enemy.speed = 3.5f;
+            }
+
+
         }
         
     }
@@ -71,7 +99,7 @@ public class AnnoyingChildScript : MonoBehaviour
             {
                 gotDog = false;
                 movementScript.dogTaken = false;
-                Dog.transform.position = Player.transform.position;
+                Dog.transform.position = new Vector3(Dog.transform.position.x, 0.3f, Dog.transform.position.z);
             }
             
             transform.DetachChildren();
