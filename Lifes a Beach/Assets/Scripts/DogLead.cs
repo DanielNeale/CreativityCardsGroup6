@@ -40,6 +40,11 @@ public class DogLead : MonoBehaviour
                 int centerDist = Mathf.FloorToInt(Mathf.Sqrt(Mathf.Pow(centerPos - (i + 1), 2)));
                 float sag = ((maxDistance - currentDistance) / 5 - (Mathf.Pow(centerDist , 2) * ((maxDistance - currentDistance) / 100)));
                 
+                if (sag < 0)
+                {
+                    sag = 0;
+                }
+
                 Vector3 newPos = new Vector3(man.position.x - ((man.position.x - dog.position.x) * point),
                                              man.position.y - (man.position.y - dog.position.y) - sag,
                                              man.position.z - ((man.position.z - dog.position.z) * point));
