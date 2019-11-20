@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class ChildSpawner : MonoBehaviour
 {
-    public GameObject[] spawners;
-
-    public GameObject childPrefab;
+    public GameObject[] children;
 
     void Start()
     {
@@ -14,17 +12,29 @@ public class ChildSpawner : MonoBehaviour
     }
 
 
-    void Update()
-    {
-
-    }
 
     IEnumerator spawn()
     {
         yield return new WaitForSeconds(50f);
-        int random = Random.Range(0, 4);
-        Vector3 _position = spawners[random].transform.position;
-        Instantiate(childPrefab, _position, Quaternion.identity);
-        StartCoroutine(spawn());
+        children[0].SetActive(true);
+        StartCoroutine(spawn2());
+
+    }
+
+    IEnumerator spawn2()
+    {
+        yield return new WaitForSeconds(50f);
+        children[1].SetActive(true);
+        StartCoroutine(spawn3());
+
+    }
+
+    IEnumerator spawn3()
+    {
+        yield return new WaitForSeconds(50f);
+        
+        children[2].SetActive(true);
+      
+
     }
 }
