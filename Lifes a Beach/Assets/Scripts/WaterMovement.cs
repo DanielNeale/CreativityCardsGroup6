@@ -19,7 +19,12 @@ public class WaterMovement : MonoBehaviour
         for (int i = 0; i < targetHeight.Length; i++)
         {
             targetHeight[i] = Random.Range(-waveRange, waveRange);
+            verticies[i].y = targetHeight[i];
+            targetHeight[i] = Random.Range(-waveRange, waveRange);
         }
+
+        water.vertices = verticies;
+        water.RecalculateNormals();
     }
 
     void Update()
@@ -45,11 +50,11 @@ public class WaterMovement : MonoBehaviour
                 {
                     targetHeight[i] = Random.Range(-waveRange, waveRange);
                 }
-
             }
-
             water.vertices = verticies;
             water.RecalculateNormals();
         }
+
+        
     }
 }
