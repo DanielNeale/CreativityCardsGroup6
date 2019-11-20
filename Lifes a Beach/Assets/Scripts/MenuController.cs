@@ -1,54 +1,73 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public Image fade;
     Transform fence;
     Transform pivot;
+    bool play;
+    float gateOpening;
+    Color newAlpha;
 
     void Start()
     {
         fence = transform.GetChild(0).transform;
         pivot = transform;
+        play = false;
+        gateOpening = 1.0f;
+        newAlpha = new Color(0, 0, 0, 0);
     }
 
     void Update()
-    {
-        Vector2 mousePos = Input.mousePosition;
-        Ray pointing = Camera.main.ScreenPointToRay(mousePos);
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(pointing, out hit) && hit.transform.CompareTag("Gate"))
+    {        
+        if (play == true)
         {
-            if (pivot.rotation.y > 0.98)
+            newAlpha.a += 0.02f;
+            fade.color = newAlpha;
+
+            if (pivot.rotation.y > 0.75)
             {
                 pivot.Rotate(new Vector3(0, -1, 0));
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (gateOpening <= 0)
             {
-                for(float i = 3.0f; i > 0; i -= Time.deltaTime)
-                {
-                    if (pivot.rotation.y < 0.75)
-                    {
-                        pivot.Rotate(new Vector3(0, -1, 0));
-                    }
-
-                    if (i <= 0.1)
-                    {
-                        Debug.Log("new scene");
-                    }
-                }
+                SceneManager.LoadScene(1);
             }
+
+            gateOpening -= Time.deltaTime;
         }
 
         else
         {
-            if (pivot.rotation.y < 1)
+            Vector2 mousePos = Input.mousePosition;
+            Ray pointing = Camera.main.ScreenPointToRay(mousePos);
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(pointing, out hit) && hit.transform.CompareTag("Gate"))
             {
-                pivot.Rotate(new Vector3(0, 1, 0));
+                if (pivot.rotation.y > 0.98)
+                {
+                    pivot.Rotate(new Vector3(0, -1, 0));
+                }
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    play = true;                    
+                }
+            }
+
+            else
+            {
+                if (pivot.rotation.y < 1)
+                {
+                    pivot.Rotate(new Vector3(0, 1, 0));
+                }
             }
         }
     }
