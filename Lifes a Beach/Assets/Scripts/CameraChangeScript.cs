@@ -8,6 +8,7 @@ public class CameraChangeScript : MonoBehaviour
     public GameObject vCam;
     public GameObject player;
     public GameObject metalDetector;
+    public GameObject nose;
    
 
 
@@ -20,6 +21,7 @@ public class CameraChangeScript : MonoBehaviour
     {
         vCam.SetActive(true);
         player.GetComponent<MeshRenderer>().enabled = false;
+       nose.GetComponent<MeshRenderer>().enabled = false;
         metalDetector.GetComponent<MeshRenderer>().enabled = false;
        
 
@@ -29,6 +31,7 @@ public class CameraChangeScript : MonoBehaviour
     {
         vCam.SetActive(false);
         player.GetComponent<MeshRenderer>().enabled = true;
+        nose.GetComponent<MeshRenderer>().enabled = true;
         metalDetector.GetComponent<MeshRenderer>().enabled = true;
     }
 }
