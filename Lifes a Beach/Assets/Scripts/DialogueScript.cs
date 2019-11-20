@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueScript : MonoBehaviour
 {
-    public GameObject shopkeeperBio;
+    public GameObject shopkeeperAllMenus;
 
     void Start()
     {
@@ -21,14 +21,16 @@ public class DialogueScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            shopkeeperBio.SetActive(true);
+            shopkeeperAllMenus.SetActive(true);
+
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            shopkeeperBio.SetActive(false);
+            shopkeeperAllMenus.SetActive(false);
+
         }
     }
 }
