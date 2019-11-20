@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour
 
     public bool dogTaken;
 
+
+
     void Start()
     {
         man = GetComponent<Rigidbody>();
@@ -131,5 +133,21 @@ public class Movement : MonoBehaviour
         man.transform.LookAt(new Vector3(dog.transform.position.x, man.transform.position.y, dog.transform.position.z));
         man.velocity = (man.transform.forward * 5);
         manCoolDown = 0.2f;
+    }
+
+    public void CrabPinched()
+    {
+       
+        StartCoroutine(PinchedDelay());
+    }
+
+
+    IEnumerator PinchedDelay()
+    {
+        float speedBefore = manSpeed;
+        manSpeed = manSpeed / 2;
+        yield return new WaitForSeconds(1.5f);
+        manSpeed = speedBefore;
+        
     }
 }
