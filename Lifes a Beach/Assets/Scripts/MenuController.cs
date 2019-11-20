@@ -12,7 +12,9 @@ public class MenuController : MonoBehaviour
     bool play;
     float gateOpening;
     Color newAlpha;
-
+    public GameObject vcam1;
+    public float fadeSpeed;
+   
     void Start()
     {
         fence = transform.GetChild(0).transform;
@@ -20,13 +22,15 @@ public class MenuController : MonoBehaviour
         play = false;
         gateOpening = 1.0f;
         newAlpha = new Color(0, 0, 0, 0);
+        vcam1.SetActive(false);
+        fadeSpeed = Time.deltaTime * fadeSpeed;
     }
 
     void Update()
     {        
         if (play == true)
         {
-            newAlpha.a += 0.02f;
+            newAlpha.a += 0.01f;
             fade.color = newAlpha;
 
             if (pivot.rotation.y > 0.75)
@@ -39,7 +43,7 @@ public class MenuController : MonoBehaviour
                 SceneManager.LoadScene(1);
             }
 
-            gateOpening -= Time.deltaTime;
+            gateOpening -= fadeSpeed;
         }
 
         else
@@ -58,7 +62,8 @@ public class MenuController : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    play = true;                    
+                    play = true;
+                    vcam1.SetActive(true);
                 }
             }
 
