@@ -5,6 +5,9 @@ using UnityEngine;
 public class DialogueScript : MonoBehaviour
 {
     public GameObject shopkeeperAllMenus;
+    public GameObject shopkeeperFlirt;
+    public GameObject shopkeeperIntro;
+    public GameObject shopkeeperExit;
 
     void Start()
     {
