@@ -12,9 +12,17 @@ public class DialogueScript : MonoBehaviour
     }
 
 
-    void Update()
+    public void Intro()
     {
         
+    }
+    public void Flirt()
+    {
+
+    }
+    public void Exit()
+    {
+
     }
 
     private void OnTriggerEnter(Collider other)
