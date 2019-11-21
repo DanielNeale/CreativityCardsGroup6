@@ -14,6 +14,8 @@ public class DialogueScript : MonoBehaviour
     public GameObject flirtButton;
     public GameObject friendlyButton;
     public GameObject nastyButton;
+	public GameObject upVote;
+	public GameObject downVote;
     public float dialogueFadeValue;
     public float dialogueShopKeeperFadeValue;
     public float dialogueCountdown;
@@ -40,6 +42,7 @@ public class DialogueScript : MonoBehaviour
         shopkeeperFriendly.SetActive(true);
         shopkeeperNasty.SetActive(false);
         shopkeeperFlirt.SetActive(false);
+		downVote.SetActive(true);
         dialogueMenuActive = false;
     }
     public void Flirt()
@@ -47,6 +50,7 @@ public class DialogueScript : MonoBehaviour
         shopkeeperFlirt.SetActive(true);
         shopkeeperNasty.SetActive(false);
         shopkeeperFriendly.SetActive(false);
+		downVote.SetActive(true);
         dialogueMenuActive = false;
     }
     public void Nasty()
@@ -55,6 +59,7 @@ public class DialogueScript : MonoBehaviour
         shopkeeperFriendly.SetActive(false);
         shopkeeperFlirt.SetActive(false);
         dialogueMenuActive = false;
+		upVote.SetActive(true);
         Discount = true;
     }
     public void shopkeeperDialogueFade()

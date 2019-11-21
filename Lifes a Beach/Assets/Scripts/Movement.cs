@@ -1,28 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
     Rigidbody man;
     public Rigidbody dog;
+	public GameObject notEnoughMoney;
+	public Text moneyText;
     public float manSpeed;
     public float dogSpeed;
     public float leadLength;
+	public float moneyFadeValue;
+	public bool moneyMenuActive;
+	public float moneyCountdown;
+	public int money;
     float coolDown;
     float manCoolDown;
 
     public bool dogTaken;
 
-
-
     void Start()
     {
         man = GetComponent<Rigidbody>();
+		money = 0;
+		moneyCountdown = 0.5f;
+        moneyMenuActive = false;
+        moneyFadeValue = 1f;
+		notEnoughMoney.SetActive(false);
     }
 
     void Update()
     {
+		if (moneyMenuActive == true) 
+		{
+			noMoney();
+		}
+		moneyText.text = money.ToString();
         Vector3 moveDirection = new Vector3(0, 0, 0);
 
         // Toby's shoddy fix at dog floating
@@ -127,6 +142,26 @@ public class Movement : MonoBehaviour
             coolDown = 0.2f;
         }
     }
+	public void noMoney()
+	{
+		if (moneyCountdown > 0)
+        {
+			notEnoughMoney.SetActive(true);
+            moneyCountdown -= Time.deltaTime;
+        }
+		else
+		{
+			notEnoughMoney.GetComponent<CanvasGroup>().alpha = moneyFadeValue;
+			moneyFadeValue -= Time.deltaTime;
+			if (moneyFadeValue <= 0)
+			{
+				notEnoughMoney.SetActive(false);
+				moneyCountdown = 0.5f;
+				moneyMenuActive = false;
+				moneyFadeValue = 1f;
+			}
+		}
+	}
 
     public void DraggedByKid()
     {
@@ -150,4 +185,39 @@ public class Movement : MonoBehaviour
         manSpeed = speedBefore;
         
     }
+	
+	public void SpeedUpgrade()
+	{
+		if (money >= 5) 
+		{
+			money = money - 5;
+			manSpeed = 7;
+		}
+		else
+		{
+			moneyMenuActive = true;
+		}
+	}
+	public void LuckUpgrade()
+	{
+		if (money >= 7) 
+		{
+			money = money - 7;
+		}
+		else
+		{
+			moneyMenuActive = true;
+		}
+	}
+	public void BackUpgrade()
+	{
+		if (money >= 2) 
+		{
+			money = money - 2;
+		}
+		else
+		{
+			moneyMenuActive = true;
+		}
+	}
 }
