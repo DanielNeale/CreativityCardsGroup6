@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5218,7 +5218,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1253324409}
-        m_MethodName: Intro
+        m_MethodName: Friendly
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9523,7 +9523,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1253324409}
-        m_MethodName: Exit
+        m_MethodName: Nasty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15518,7 +15518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1529728457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19582,9 +19582,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "* Female\r\n* Former pirate, retired after The Accident\u2122 that made
-    her lose her eye\r\n* Imports her exotic goods from her pirate contacts.\r\n*
-    Can play the accordion"
+  m_Text: "* Female\r.\n* Former pirate, retired after The Accident\u2122 that made
+    her lose her eye\r.\n* Really aggressive.\r\n* Can play the accordion."
 --- !u!222 &1928622404
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20501,6 +20500,31 @@ PrefabInstance:
       propertyPath: dialogueMenuActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: introButton
+      value: 
+      objectReference: {fileID: 522068588}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: flirtButton
+      value: 
+      objectReference: {fileID: 2121089037}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: friendlyButton
+      value: 
+      objectReference: {fileID: 522068588}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: nastyButton
+      value: 
+      objectReference: {fileID: 962331185}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: dialogueShopKeeperCanvas
+      value: 
+      objectReference: {fileID: 1529728456}
     - target: {fileID: 8395948572013488715, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
         type: 3}
       propertyPath: m_LocalPosition.x
