@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5364482839032549809}
   - component: {fileID: 5364482839032549808}
   - component: {fileID: 5364482839032549811}
+  - component: {fileID: 3992797361012195158}
   m_Layer: 0
   m_Name: Digging Spot
   m_TagString: DigSpot
@@ -106,3 +107,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceAway: 0
   playerObj: {fileID: 0}
+--- !u!114 &3992797361012195158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5364482839032549810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49cfdc3adc772c43995ba659f6b7902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
