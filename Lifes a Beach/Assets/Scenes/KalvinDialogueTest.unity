@@ -5537,6 +5537,8 @@ GameObject:
   - component: {fileID: 558858559}
   - component: {fileID: 558858558}
   - component: {fileID: 558858557}
+  - component: {fileID: 558858561}
+  - component: {fileID: 558858560}
   m_Layer: 5
   m_Name: DialogueOptionsCanvas
   m_TagString: Untagged
@@ -5553,11 +5555,11 @@ RectTransform:
   m_GameObject: {fileID: 558858555}
   m_LocalRotation: {x: -0, y: 0.9953034, z: -0.09680467, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 1.8247299}
-  m_LocalScale: {x: 0.0026533334, y: 0.0026533334, z: 0.0026533334}
+  m_LocalScale: {x: 0.0026533334, y: 0.002653334, z: 0.0026533334}
   m_Children:
   - {fileID: 953812715}
   m_Father: {fileID: 1813595661}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 11.110001, y: 180.00002, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5624,6 +5626,26 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &558858560
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558858555}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!222 &558858561
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558858555}
+  m_CullTransparentMesh: 0
 --- !u!4 &561744175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1029599651830224021, guid: 79fee56112d82c64ba462879ae48cf0b,
@@ -7254,7 +7276,7 @@ RectTransform:
   m_Children:
   - {fileID: 2013370143}
   m_Father: {fileID: 1813595661}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -10.819, y: 180.00002, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15489,13 +15511,14 @@ GameObject:
   - component: {fileID: 1529728460}
   - component: {fileID: 1529728459}
   - component: {fileID: 1529728458}
+  - component: {fileID: 1529728461}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1529728457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15578,6 +15601,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1529728461
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529728456}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1544882206
 GameObject:
   m_ObjectHideFlags: 0
@@ -18151,9 +18186,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1879235312}
-  - {fileID: 558858556}
   - {fileID: 721761872}
   - {fileID: 2030567954}
+  - {fileID: 558858556}
   m_Father: {fileID: 1684423627}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20381,10 +20416,90 @@ PrefabInstance:
       propertyPath: goToShopMenu
       value: 
       objectReference: {fileID: 150521606}
+    - target: {fileID: 8395948572165180581, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: dialogueCanvas
+      value: 
+      objectReference: {fileID: 558858555}
     - target: {fileID: 8395948571828496465, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperMenus.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperBio
+      value: 
+      objectReference: {fileID: 1879235308}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperButtons
+      value: 
+      objectReference: {fileID: 558858555}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperMenus.Array.data[0]
+      value: 
+      objectReference: {fileID: 1879235308}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperMenus.Array.data[1]
+      value: 
+      objectReference: {fileID: 558858555}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperMenus.Array.data[2]
+      value: 
+      objectReference: {fileID: 721761868}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperAllMenus
+      value: 
+      objectReference: {fileID: 1813595660}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperIntro
+      value: 
+      objectReference: {fileID: 1478026241}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperExit
+      value: 
+      objectReference: {fileID: 725236717}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperAngryFlirt
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperFlirt
+      value: 
+      objectReference: {fileID: 1631623518}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: dialogueCanvas
+      value: 
+      objectReference: {fileID: 558858555}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperFriendly
+      value: 
+      objectReference: {fileID: 1478026241}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: shopkeeperNasty
+      value: 
+      objectReference: {fileID: 725236717}
+    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
+        type: 3}
+      propertyPath: dialogueMenuActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8395948572013488715, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
         type: 3}
@@ -20536,66 +20651,6 @@ PrefabInstance:
       propertyPath: m_FollowOffset.y
       value: -4.397394
       objectReference: {fileID: 0}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperMenus.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperBio
-      value: 
-      objectReference: {fileID: 1879235308}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperButtons
-      value: 
-      objectReference: {fileID: 558858555}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperMenus.Array.data[0]
-      value: 
-      objectReference: {fileID: 1879235308}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperMenus.Array.data[1]
-      value: 
-      objectReference: {fileID: 558858555}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperMenus.Array.data[2]
-      value: 
-      objectReference: {fileID: 721761868}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperAllMenus
-      value: 
-      objectReference: {fileID: 1813595660}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperIntro
-      value: 
-      objectReference: {fileID: 1478026241}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperExit
-      value: 
-      objectReference: {fileID: 725236717}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperAngryFlirt
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: shopkeeperFlirt
-      value: 
-      objectReference: {fileID: 1631623518}
-    - target: {fileID: 7456618949922551216, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad,
-        type: 3}
-      propertyPath: dialogueCanvas
-      value: 
-      objectReference: {fileID: 558858555}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55f1e5a5ea4296c42b44caad0cb3f6ad, type: 3}
 --- !u!1001 &2006149905
@@ -20981,7 +21036,7 @@ RectTransform:
   m_Children:
   - {fileID: 944075651}
   m_Father: {fileID: 1813595661}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 167.977, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
