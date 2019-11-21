@@ -6,42 +6,37 @@ public class DialogueScript : MonoBehaviour
 {
     public GameObject shopkeeperAllMenus;
     public GameObject shopkeeperFlirt;
-    public GameObject shopkeeperIntro;
-    public GameObject shopkeeperExit;
+    public GameObject shopkeeperFriendly;
+    public GameObject shopkeeperNasty;
+    public GameObject dialogueCanvas;
+    public bool Discount;
 
     void Start()
     {
-        
+        Discount = false;
     }
-
-
-    public void Intro()
+    public void Friendly()
     {
-        
+        shopkeeperFriendly.SetActive(true);
+        shopkeeperNasty.SetActive(false);
+        shopkeeperFlirt.SetActive(false);
+        dialogueCanvas.SetActive(false);
     }
+
     public void Flirt()
     {
-
+        shopkeeperFlirt.SetActive(true);
+        shopkeeperNasty.SetActive(false);
+        shopkeeperFriendly.SetActive(false);
+        dialogueCanvas.SetActive(false);
+        Discount = true;
     }
-    public void Exit()
+
+    public void Nasty()
     {
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            shopkeeperAllMenus.SetActive(true);
-
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            shopkeeperAllMenus.SetActive(false);
-
-        }
+        shopkeeperNasty.SetActive(true);
+        shopkeeperFriendly.SetActive(false);
+        shopkeeperFlirt.SetActive(false);
+        dialogueCanvas.SetActive(false);
     }
 }
