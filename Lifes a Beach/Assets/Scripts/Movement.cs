@@ -21,6 +21,21 @@ public class Movement : MonoBehaviour
 
     public bool dogTaken;
 
+    public GameObject dogGroup;
+    public GameObject manGroup;
+
+    private Animator dogAnim;
+
+    private Animator manAnim;
+
+    private Vector3 standingVelocityMan;
+
+    private Vector3 StandingDogVelocity;
+
+    Vector3 dogMoveDirection;
+
+
+
     void Start()
     {
         man = GetComponent<Rigidbody>();
@@ -29,6 +44,13 @@ public class Movement : MonoBehaviour
         moneyMenuActive = false;
         moneyFadeValue = 1f;
 		notEnoughMoney.SetActive(false);
+
+        dogAnim = dogGroup.GetComponent<Animator>();
+        manAnim = manGroup.GetComponent<Animator>();
+
+        standingVelocityMan = man.velocity;
+        StandingDogVelocity = dogMoveDirection;
+
     }
 
     void Update()
@@ -73,8 +95,26 @@ public class Movement : MonoBehaviour
             moveDirection.Normalize();
             man.velocity = (moveDirection * manSpeed);
             man.transform.LookAt(man.transform.position + moveDirection);
+
+            if (man.velocity != standingVelocityMan)
+            {
+                manAnim.Play("Walk2");
+            }
+            else
+            {
+                manAnim.Play("Idle2");
+            }
         }
-        
+
+
+        if (dogMoveDirection != StandingDogVelocity)
+        {
+            dogAnim.Play("Walk2");
+        }
+        else
+        {
+            dogAnim.Play("Idle2");
+        }
 
 
         //Dogo Movement
@@ -82,7 +122,7 @@ public class Movement : MonoBehaviour
 
         if (Vector3.Distance(man.transform.position, dog.transform.position) < leadLength && coolDown < 0)
         {
-            Vector3 dogMoveDirection = new Vector3(0, 0, 0);
+            dogMoveDirection = new Vector3(0, 0, 0);
 
             if (Input.GetKey(KeyCode.UpArrow))
             {
@@ -142,6 +182,7 @@ public class Movement : MonoBehaviour
             coolDown = 0.2f;
         }
     }
+
 	public void noMoney()
 	{
 		if (moneyCountdown > 0)
@@ -162,6 +203,11 @@ public class Movement : MonoBehaviour
 			}
 		}
 	}
+
+    public void dogDug()
+    {
+        Debug.Log("dog digs");
+    }
 
     public void DraggedByKid()
     {
@@ -185,6 +231,8 @@ public class Movement : MonoBehaviour
         manSpeed = speedBefore;
         
     }
+
+    
 	
 	public void SpeedUpgrade()
 	{

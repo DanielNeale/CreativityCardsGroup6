@@ -6,6 +6,10 @@ public class DogDigging : MonoBehaviour
 {
     public InventoryScript inventory;
 
+    public GameObject player;
+
+    public Movement movementScript;
+
     void OnTriggerStay(Collider other)
     {
         if ((other.gameObject.tag == "DigSpot") &&(Input.GetKeyDown(KeyCode.RightShift)))
@@ -18,11 +22,17 @@ public class DogDigging : MonoBehaviour
             }
             print("Got Treasure!");
             Destroy(other.gameObject);
+            movementScript.dogDug();
         }
     }
 
     private void OnApplicationQuit()
     {
         inventory.Container.Clear();
+    }
+
+    private void Start()
+    {
+        movementScript = player.GetComponent<Movement>();
     }
 }
