@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SkyboxCont : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class SkyboxCont : MonoBehaviour
 
     void Update()
     {
+        if(SceneManager.GetActiveScene().name == "")
+        {
+
+        }
+
         if (changes == 0)
         {
             sky.color = Color.Lerp(dawn, day, (5.0f - changeTime) / 5.0f);
