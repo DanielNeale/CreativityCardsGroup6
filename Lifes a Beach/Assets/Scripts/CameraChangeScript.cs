@@ -9,7 +9,6 @@ public class CameraChangeScript : MonoBehaviour
     public GameObject vCam2;
     public GameObject player;
     public GameObject metalDetector;
-    public GameObject nose;
     public GameObject shopkeeperAllMenus;
     public GameObject goToShopMenu;
     public float ShopAllMenusFadeValue;
@@ -95,7 +94,6 @@ public class CameraChangeScript : MonoBehaviour
         {
             vCam.SetActive(true);
             player.GetComponent<MeshRenderer>().enabled = false;
-            nose.GetComponent<MeshRenderer>().enabled = false;
             metalDetector.GetComponent<MeshRenderer>().enabled = false;
             ShopAllMenusActive = true;
             shopkeeperAllMenus.SetActive(true);
@@ -109,7 +107,6 @@ public class CameraChangeScript : MonoBehaviour
             vCam.SetActive(false);
             vCam2.SetActive(false);
             player.GetComponent<MeshRenderer>().enabled = true;
-            nose.GetComponent<MeshRenderer>().enabled = true;
             metalDetector.GetComponent<MeshRenderer>().enabled = true;
             ShopAllMenusActive = false;
             ToShopMenuActive = false;
