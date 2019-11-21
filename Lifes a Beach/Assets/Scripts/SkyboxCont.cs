@@ -39,7 +39,7 @@ public class SkyboxCont : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "MainScene2")
         {
-            if (changes == 0 && sun.eulerAngles.x < 130)
+            if (changes == 0 && sun.eulerAngles.x < 100)
             {
                 sky.color = Color.Lerp(dawn, day, (10.0f - changeTime) / 10.0f);
                 changeTime -= Time.deltaTime;
@@ -55,14 +55,12 @@ public class SkyboxCont : MonoBehaviour
             {
                 sky.color = Color.Lerp(dusk, night, (10.0f - changeTime) / 10.0f);
                 changeTime -= Time.deltaTime;
-                Debug.Log(changeTime);
                 startEnd = true;
             }
 
             if (changeTime <= 0)
             {
                 changes++;
-                Debug.Log(changes);
                 changeTime = 10.0f;
             }
 
