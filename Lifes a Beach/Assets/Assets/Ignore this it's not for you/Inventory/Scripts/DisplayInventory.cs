@@ -48,6 +48,7 @@ public class DisplayInventory : MonoBehaviour
         {
             var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
+            itemsDisplayed.Add(inventory.Container[i], obj);
         }
     }
 
