@@ -93,7 +93,7 @@ public class CameraChangeScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             vCam.SetActive(true);
-            player.GetComponent<MeshRenderer>().enabled = false;
+            //player.GetComponent<MeshRenderer>().enabled = false;
             metalDetector.GetComponent<MeshRenderer>().enabled = false;
             ShopAllMenusActive = true;
             shopkeeperAllMenus.SetActive(true);
@@ -106,7 +106,7 @@ public class CameraChangeScript : MonoBehaviour
         {
             vCam.SetActive(false);
             vCam2.SetActive(false);
-            player.GetComponent<MeshRenderer>().enabled = true;
+            //player.GetComponent<MeshRenderer>().enabled = true;
             metalDetector.GetComponent<MeshRenderer>().enabled = true;
             ShopAllMenusActive = false;
             ToShopMenuActive = false;
