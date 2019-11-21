@@ -13,11 +13,13 @@ public class SkyboxCont : MonoBehaviour
     Color32 night;
     float changeTime;
     int changes;
+    float endTime;
+    bool startEnd;
 
     void Start()
     {
         sun.eulerAngles = new Vector3(130, sun.eulerAngles.y, sun.eulerAngles.z);
-        sun.GetComponent<Animation>()["Day Cylce"].speed = 0.3f;
+        sun.GetComponent<Animation>()["Day Cylce"].speed = 1f;
 
         dawn = new Color32(56, 65, 80, 128);
         day = new Color32(60, 93, 145, 128);
@@ -25,16 +27,17 @@ public class SkyboxCont : MonoBehaviour
         night = new Color32(18, 20, 58, 128);
         sky.color = dawn;
         changeTime = 10.0f;
+        endTime = 15.0f;
     }
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "StartMenu")
+        if (SceneManager.GetActiveScene().name == "StartMenu")
         {
             sky.color = day;
         }
 
-        if(SceneManager.GetActiveScene().name == "MainScene2")
+        if (SceneManager.GetActiveScene().name == "MainScene2")
         {
             if (changes == 0 && sun.eulerAngles.x < 130)
             {
@@ -48,11 +51,12 @@ public class SkyboxCont : MonoBehaviour
                 changeTime -= Time.deltaTime;
             }
 
-            if (changes == 2 && sun.eulerAngles.x < 5 || sun.eulerAngles.x > 180)
+            if (changes == 2 && (sun.eulerAngles.x < 5 || sun.eulerAngles.x > 180))
             {
                 sky.color = Color.Lerp(dusk, night, (10.0f - changeTime) / 10.0f);
                 changeTime -= Time.deltaTime;
                 Debug.Log(changeTime);
+                startEnd = true;
             }
 
             if (changeTime <= 0)
@@ -60,6 +64,15 @@ public class SkyboxCont : MonoBehaviour
                 changes++;
                 Debug.Log(changes);
                 changeTime = 10.0f;
+            }
+
+            if (startEnd == true)
+            {
+                if (endTime <= 0)
+                {
+                    SceneManager.LoadScene(2);
+                }
+                endTime -= Time.deltaTime;
             }
         }        
     }
