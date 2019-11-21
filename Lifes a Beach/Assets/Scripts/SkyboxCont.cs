@@ -6,24 +6,25 @@ using UnityEngine.SceneManagement;
 public class SkyboxCont : MonoBehaviour
 {
     public Material sky;
-    public Transform  sun;
+    public Transform sun;
     Color32 dawn;
     Color32 day;
     Color32 dusk;
-    float tillChange;
+    Color32 night;
     float changeTime;
     int changes;
 
     void Start()
     {
         sun.eulerAngles = new Vector3(130, sun.eulerAngles.y, sun.eulerAngles.z);
+        sun.GetComponent<Animation>()["Day Cylce"].speed = 0.3f;
 
         dawn = new Color32(56, 65, 80, 128);
         day = new Color32(60, 93, 145, 128);
         dusk = new Color32(255, 63, 35, 128);
+        night = new Color32(18, 20, 58, 128);
         sky.color = dawn;
-        changeTime = 5.0f;
-        tillChange = 15.0f;
+        changeTime = 10.0f;
     }
 
     void Update()
@@ -37,24 +38,29 @@ public class SkyboxCont : MonoBehaviour
         {
             if (changes == 0 && sun.eulerAngles.x < 130)
             {
-                sky.color = Color.Lerp(dawn, day, (5.0f - changeTime) / 5.0f);
+                sky.color = Color.Lerp(dawn, day, (10.0f - changeTime) / 10.0f);
                 changeTime -= Time.deltaTime;
             }
 
             if (changes == 1 && sun.eulerAngles.x < 45)
             {
-                sky.color = Color.Lerp(day, dusk, (5.0f - changeTime) / 5.0f);
+                sky.color = Color.Lerp(day, dusk, (10.0f - changeTime) / 10.0f);
                 changeTime -= Time.deltaTime;
             }
 
-            if (tillChange <= 0)
+            if (changes == 2 && sun.eulerAngles.x < 5 || sun.eulerAngles.x > 180)
+            {
+                sky.color = Color.Lerp(dusk, night, (10.0f - changeTime) / 10.0f);
+                changeTime -= Time.deltaTime;
+                Debug.Log(changeTime);
+            }
+
+            if (changeTime <= 0)
             {
                 changes++;
-                changeTime = 5.0f;
-                tillChange = 600;
+                Debug.Log(changes);
+                changeTime = 10.0f;
             }
-           
-            tillChange -= Time.deltaTime;
         }        
     }
 }

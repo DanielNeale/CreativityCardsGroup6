@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2679073118248698989}
   - component: {fileID: 2679073118248698988}
-  - component: {fileID: 2679073118248698898}
+  - component: {fileID: 1042403995115623638}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -70,7 +70,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!111 &2679073118248698898
+--- !u!111 &1042403995115623638
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
