@@ -9,6 +9,7 @@ TagManager:
   - DigSpot
   - Gate
   - Exit
+  - Ground
   layers:
   - Default
   - TransparentFX
