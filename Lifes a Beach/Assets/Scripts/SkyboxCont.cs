@@ -4,76 +4,44 @@ using UnityEngine;
 
 public class SkyboxCont : MonoBehaviour
 {
-    Color dawn;
-    Color day;
-    Color dusk;
+    public Material sky;
+    Color32 dawn;
+    Color32 day;
+    Color32 dusk;
     float tillChange;
     float changeTime;
-    bool changing;
+    int changes;
 
     void Start()
     {
-        dawn = new Color(157, 174, 201, 128);
-        day = new Color(70, 128, 219, 128);
-        dusk = new Color(3, 48, 77, 128);
-        RenderSettings.skybox.SetColor("dawn", dawn);
+        dawn = new Color32(56, 65, 80, 128);
+        day = new Color32(60, 93, 145, 128);
+        dusk = new Color32(255, 63, 35, 128);
+        sky.color = dawn;
         changeTime = 5.0f;
+        tillChange = 15.0f;
     }
 
     void Update()
-    {       
-        if (tillChange <= 0)
+    {
+        if (changes == 0)
         {
-            if (changing == false)
-            {
-                changeTime = 5.0f;
-                changing = true;
-            }
-
-            if (RenderSettings.skybox.HasProperty("dawn"))
-            {
-                float rDist = ((dawn.r - day.r) * ((5.0f - changeTime) / 5.0f));
-                float gDist = ((dawn.g - day.g) * ((5.0f - changeTime) / 5.0f));
-                float bDist = ((day.b - dawn.b) * ((5.0f - changeTime) / 5.0f));
-                
-                Color colorChange = new Color(rDist, gDist, bDist, 128);
-                Color oldColour = RenderSettings.skybox.GetColor("dawn");
-                Color newColour = oldColour + colorChange;
-
-                RenderSettings.skybox.SetColor("dawn", newColour);
-                changeTime -= Time.deltaTime;
-            }
-
-            if (RenderSettings.skybox.HasProperty("day"))
-            {
-                float rDist = ((day.r - dusk.r) * ((5.0f - changeTime) / 5.0f));
-                float gDist = ((day.g - dusk.g) * ((5.0f - changeTime) / 5.0f));
-                float bDist = ((day.b - dusk.b) * ((5.0f - changeTime) / 5.0f));
-
-                Color colorChange = new Color(rDist, gDist, bDist, 128);
-                Color oldColour = RenderSettings.skybox.GetColor("dawn");
-                Color newColour = oldColour + colorChange;
-
-                RenderSettings.skybox.SetColor("dawn", newColour);
-                changeTime -= Time.deltaTime;
-            }
-
-            if (changeTime <= 0 && RenderSettings.skybox.HasProperty("dawn"))
-            {
-                RenderSettings.skybox.SetColor("day", day);
-                tillChange = 20.0f;
-                changing = false;
-            }
-
-            if (changeTime <= 0 && RenderSettings.skybox.HasProperty("day"))
-            {
-                RenderSettings.skybox.SetColor("dusk", day);
-                tillChange = 20.0f;
-                changing = false;
-            }
+            sky.color = Color.Lerp(dawn, day, (5.0f - changeTime) / 5.0f);
         }
 
-        DynamicGI.UpdateEnvironment();
+        if (changes == 1)
+        {
+            sky.color = Color.Lerp(day, dusk, (5.0f - changeTime) / 5.0f);
+        }
+
+        if (tillChange <= 0)
+        {
+            changes++;
+            changeTime = 5.0f;
+            tillChange = 600;
+        }
+
+        changeTime -= Time.deltaTime;
         tillChange -= Time.deltaTime;
     }
 }
