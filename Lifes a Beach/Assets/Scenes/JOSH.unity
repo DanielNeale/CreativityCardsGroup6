@@ -606,7 +606,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49cfdc3adc772c43995ba659f6b7902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whichItem: 0
   item: {fileID: 11400000, guid: 7ca610f9eb31d254c8ecd109cf936a6c, type: 2}
+  item1: {fileID: 0}
+  item2: {fileID: 0}
+  item3: {fileID: 0}
+  item4: {fileID: 0}
+  item5: {fileID: 0}
+  item6: {fileID: 0}
+  item7: {fileID: 0}
+  item8: {fileID: 0}
+  item9: {fileID: 0}
+  item10: {fileID: 0}
+  item11: {fileID: 0}
+  item12: {fileID: 0}
+  item13: {fileID: 0}
+  item14: {fileID: 0}
+  item15: {fileID: 0}
+  item16: {fileID: 0}
+  item17: {fileID: 0}
+  item18: {fileID: 0}
+  item19: {fileID: 0}
+  item20: {fileID: 0}
 --- !u!1 &1751885272
 GameObject:
   m_ObjectHideFlags: 0

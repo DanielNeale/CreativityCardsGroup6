@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public int whichItem;
+
     public ItemObject item;
 
     public ItemObject item1;
@@ -29,7 +31,88 @@ public class Item : MonoBehaviour
 
     public void Start()
     {
-        item = 
+        whichItem = Random.Range(1, 20);
+
+        if (whichItem == 1)
+        {
+            item = item1;
+        }
+        else if(whichItem == 2)
+        {
+            item = item2;
+        }
+        else if (whichItem == 3)
+        {
+            item = item3;
+        }
+        else if (whichItem == 4)
+        {
+            item = item4;
+        }
+        else if (whichItem == 5)
+        {
+            item = item5;
+        }
+        else if (whichItem == 6)
+        {
+            item = item6;
+        }
+        else if (whichItem == 7)
+        {
+            item = item7;
+        }
+        else if (whichItem == 8)
+        {
+            item = item8;
+        }
+        else if (whichItem == 9)
+        {
+            item = item9;
+        }
+        else if (whichItem == 10)
+        {
+            item = item10;
+        }
+        else if (whichItem == 11)
+        {
+            item = item11;
+        }
+        else if (whichItem == 12)
+        {
+            item = item12;
+        }
+        else if (whichItem == 13)
+        {
+            item = item13;
+        }
+        else if (whichItem == 14)
+        {
+            item = item14;
+        }
+        else if (whichItem == 15)
+        {
+            item = item15;
+        }
+        else if (whichItem == 16)
+        {
+            item = item16;
+        }
+        else if (whichItem == 17)
+        {
+            item = item17;
+        }
+        else if (whichItem == 18)
+        {
+            item = item18;
+        }
+        else if (whichItem == 19)
+        {
+            item = item19;
+        }
+        else if (whichItem == 20)
+        {
+            item = item20;
+        }
     }
 
 }
