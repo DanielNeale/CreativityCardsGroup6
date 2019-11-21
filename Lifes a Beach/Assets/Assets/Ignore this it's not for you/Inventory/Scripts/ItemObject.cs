@@ -5,8 +5,9 @@ using UnityEngine;
 public enum ItemRarity
 {
     Common,
+    Uncommon,
     Rare,
-    Epic
+    Relic
 }
 
 public abstract class ItemObject : ScriptableObject

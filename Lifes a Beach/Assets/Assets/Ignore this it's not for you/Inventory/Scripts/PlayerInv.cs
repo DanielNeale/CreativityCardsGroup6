@@ -16,4 +16,8 @@ public class PlayerInv : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
+    }
 }
