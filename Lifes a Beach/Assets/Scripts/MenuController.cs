@@ -74,6 +74,12 @@ public class MenuController : MonoBehaviour
                     pivot.Rotate(new Vector3(0, 1, 0));
                 }
             }
+
+            if (Physics.Raycast(pointing, out hit) && hit.transform.CompareTag("Exit") && Input.GetMouseButtonDown(0))
+            {
+                Application.Quit();
+                Debug.Log("quit");
+            }
         }
     }
 }

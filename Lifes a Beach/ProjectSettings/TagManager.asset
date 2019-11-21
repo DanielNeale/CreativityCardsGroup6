@@ -8,6 +8,7 @@ TagManager:
   - Dog
   - DigSpot
   - Gate
+  - Exit
   layers:
   - Default
   - TransparentFX
