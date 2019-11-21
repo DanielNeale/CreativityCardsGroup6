@@ -25,29 +25,32 @@ public class SkyboxCont : MonoBehaviour
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "")
+        if(SceneManager.GetActiveScene().name == "StartMenu")
         {
-
+            sky.color = day;
         }
 
-        if (changes == 0)
+        if(SceneManager.GetActiveScene().name == "MainScene2")
         {
-            sky.color = Color.Lerp(dawn, day, (5.0f - changeTime) / 5.0f);
-        }
+            if (changes == 0)
+            {
+                sky.color = Color.Lerp(dawn, day, (5.0f - changeTime) / 5.0f);
+            }
 
-        if (changes == 1)
-        {
-            sky.color = Color.Lerp(day, dusk, (5.0f - changeTime) / 5.0f);
-        }
+            if (changes == 1)
+            {
+                sky.color = Color.Lerp(day, dusk, (5.0f - changeTime) / 5.0f);
+            }
 
-        if (tillChange <= 0)
-        {
-            changes++;
-            changeTime = 5.0f;
-            tillChange = 600;
-        }
+            if (tillChange <= 0)
+            {
+                changes++;
+                changeTime = 5.0f;
+                tillChange = 600;
+            }
 
-        changeTime -= Time.deltaTime;
-        tillChange -= Time.deltaTime;
+            changeTime -= Time.deltaTime;
+            tillChange -= Time.deltaTime;
+        }        
     }
 }
