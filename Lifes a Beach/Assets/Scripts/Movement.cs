@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour
     public Rigidbody dog;
 	public GameObject notEnoughMoney;
 	public Text moneyText;
+	public Text moneyText2;
+	public Text moneyText3;
     public float manSpeed;
     public float dogSpeed;
     public float leadLength;
@@ -74,6 +76,8 @@ public class Movement : MonoBehaviour
 			noMoney();
 		}
 		moneyText.text = money.ToString();
+		moneyText2.text = money.ToString();
+		moneyText3.text = money.ToString();
         Vector3 moveDirection = new Vector3(0, 0, 0);
 
         // Toby's shoddy fix at dog floating
@@ -272,6 +276,41 @@ public class Movement : MonoBehaviour
 		}
 	}
 	public void BackUpgrade()
+	{
+		if (money >= 2) 
+		{
+			money = money - 2;
+		}
+		else
+		{
+			moneyMenuActive = true;
+		}
+	}
+	public void SpeedDogUpgrade()
+	{
+		if (money >= 5) 
+		{
+			money = money - 5;
+			dogSpeed = 9;
+		}
+		else
+		{
+			moneyMenuActive = true;
+		}
+	}
+	public void LengthUpgrade()
+	{
+		if (money >= 5) 
+		{
+			money = money - 5;
+			leadLength = 8;
+		}
+		else
+		{
+			moneyMenuActive = true;
+		}
+	}
+	public void BorkUpgrade()
 	{
 		if (money >= 2) 
 		{

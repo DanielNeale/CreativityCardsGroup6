@@ -39,28 +39,63 @@ public class DialogueScript : MonoBehaviour
     }
     public void Friendly()
     {
+		if (gameObject.name == "ThePeopleShop Variant") 
+		{
+			downVote.SetActive(true);
+		}
+		if (gameObject.name == "TheDogShop Variant") 
+		{
+			downVote.SetActive(true);
+		}
+		if (gameObject.name == "TheSellingShop Variant") 
+		{
+			upVote.SetActive(true);
+			Discount = true;
+		}
         shopkeeperFriendly.SetActive(true);
         shopkeeperNasty.SetActive(false);
         shopkeeperFlirt.SetActive(false);
-		downVote.SetActive(true);
         dialogueMenuActive = false;
     }
     public void Flirt()
     {
+		if (gameObject.name == "ThePeopleShop Variant") 
+		{
+			downVote.SetActive(true);
+		}
+		if (gameObject.name == "TheDogShop Variant") 
+		{
+			upVote.SetActive(true);
+			Discount = true;
+		}
+		if (gameObject.name == "TheSellingShop Variant") 
+		{
+			downVote.SetActive(true);
+		}
         shopkeeperFlirt.SetActive(true);
         shopkeeperNasty.SetActive(false);
         shopkeeperFriendly.SetActive(false);
-		downVote.SetActive(true);
         dialogueMenuActive = false;
     }
     public void Nasty()
     {
+		if (gameObject.name == "ThePeopleShop Variant") 
+		{
+			upVote.SetActive(true);
+			Discount = true;
+		}
+		if (gameObject.name == "TheDogShop Variant") 
+		{
+			downVote.SetActive(true);
+		}
+		if (gameObject.name == "TheSellingShop Variant") 
+		{
+			downVote.SetActive(true);
+		}
         shopkeeperNasty.SetActive(true);
         shopkeeperFriendly.SetActive(false);
         shopkeeperFlirt.SetActive(false);
         dialogueMenuActive = false;
-		upVote.SetActive(true);
-        Discount = true;
     }
     public void shopkeeperDialogueFade()
     {
