@@ -51,7 +51,7 @@ public class SkyboxCont : MonoBehaviour
                 changeTime -= Time.deltaTime;
             }
 
-            if (changes == 2 && (sun.eulerAngles.x < 5 || sun.eulerAngles.x > 180))
+            if (changes == 2 && (sun.eulerAngles.x < 10 || sun.eulerAngles.x > 180))
             {
                 sky.color = Color.Lerp(dusk, night, (10.0f - changeTime) / 10.0f);
                 changeTime -= Time.deltaTime;

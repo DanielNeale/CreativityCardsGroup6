@@ -39,6 +39,8 @@ public class Movement : MonoBehaviour
 
     Vector3 dogMoveDirection;
 
+    public bool digging;
+
 
 
     void Start()
@@ -129,11 +131,18 @@ public class Movement : MonoBehaviour
 
         if (dogMoveDirection != StandingDogVelocity)
         {
-            dogAnim.Play("Walk2");
+            if(!digging)
+            {
+                dogAnim.Play("Walk2");
+            }
+            
         }
         else
         {
-            dogAnim.Play("Idle2");
+            if (!digging)
+            {
+                dogAnim.Play("Idle2");
+            }
         }
 
 
@@ -144,25 +153,29 @@ public class Movement : MonoBehaviour
         {
             dogMoveDirection = new Vector3(0, 0, 0);
 
-            if (Input.GetKey(KeyCode.UpArrow))
+            if(!digging)
             {
-                dogMoveDirection.z = 1;
-            }
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    dogMoveDirection.z = 1;
+                }
 
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                dogMoveDirection.z = -1;
-            }
+                if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    dogMoveDirection.z = -1;
+                }
 
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                dogMoveDirection.x = 1;
-            }
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    dogMoveDirection.x = 1;
+                }
 
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                dogMoveDirection.x = -1;
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    dogMoveDirection.x = -1;
+                }
             }
+            
 
             if(!dogTaken)
             {
@@ -226,7 +239,11 @@ public class Movement : MonoBehaviour
 
     public void dogDug()
     {
-        Debug.Log("dog digs");
+        //Debug.Log("dog digs");
+        digging = true;
+        dogAnim.Play("Dig2");
+        StartCoroutine(DigDelay());
+
     }
 
     public void DraggedByKid()
@@ -242,6 +259,12 @@ public class Movement : MonoBehaviour
         StartCoroutine(PinchedDelay());
     }
 
+    IEnumerator DigDelay()
+    {
+        yield return new WaitForSeconds(1.7f);
+        digging = false;
+
+    }
 
     IEnumerator PinchedDelay()
     {
