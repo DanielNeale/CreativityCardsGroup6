@@ -12,6 +12,7 @@ public enum ItemRarity
 
 public abstract class ItemObject : ScriptableObject
 {
+    public int Value;
     public GameObject prefab;
     public ItemRarity type;
     [TextArea(15,20)]

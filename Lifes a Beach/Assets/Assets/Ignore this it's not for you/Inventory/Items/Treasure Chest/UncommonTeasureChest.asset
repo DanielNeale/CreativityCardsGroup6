@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4095995e08b21a043b6b8cb95ec7b6e1, type: 3}
   m_Name: UncommonTeasureChest
   m_EditorClassIdentifier: 
+  Value: 5
   prefab: {fileID: 6953715758661753312, guid: 17d9797014ecccd44acf2cec33cb1ff4, type: 3}
-  type: 1
+  type: 0
   description: 
-  Value: 0

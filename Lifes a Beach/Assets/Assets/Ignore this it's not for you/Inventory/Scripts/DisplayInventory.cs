@@ -6,6 +6,8 @@ public class DisplayInventory : MonoBehaviour
 {
     public InventoryScript inventory;
 
+    public GameObject Child;
+
     public int X_START;
     public int Y_START;
     public int X_SPACE_BETWEEN_ITEM;
@@ -55,5 +57,38 @@ public class DisplayInventory : MonoBehaviour
     public Vector3 GetPosition(int i)
     {
         return new Vector3((X_START + X_SPACE_BETWEEN_ITEM * (i % NUMBER_OF_COLUMN)), Y_START + (-Y_SPACE_BETWEEN_ITEMS * (i/NUMBER_OF_COLUMN)), 0f);
+    }
+
+    public void DestroyUI()
+    {
+        Child = this.gameObject.transform.GetChild(0).gameObject;
+        Destroy(Child.gameObject);
+
+        Child = this.gameObject.transform.GetChild(1).gameObject;
+        Destroy(Child.gameObject);
+
+        Child = this.gameObject.transform.GetChild(2).gameObject;
+        Destroy(Child.gameObject);
+
+        Child = this.gameObject.transform.GetChild(3).gameObject;
+        Destroy(Child.gameObject);
+
+        Child = this.gameObject.transform.GetChild(4).gameObject;
+        Destroy(Child.gameObject);
+
+        Child = this.gameObject.transform.GetChild(5).gameObject;
+        Destroy(Child.gameObject);
+
+        Child = this.gameObject.transform.GetChild(6).gameObject;
+        Destroy(Child.gameObject);
+
+        Child = this.gameObject.transform.GetChild(7).gameObject;
+        Destroy(Child.gameObject);
+
+        Child = this.gameObject.transform.GetChild(8).gameObject;
+        Destroy(Child.gameObject);
+
+        Child = this.gameObject.transform.GetChild(9).gameObject;
+        Destroy(Child.gameObject);
     }
 }

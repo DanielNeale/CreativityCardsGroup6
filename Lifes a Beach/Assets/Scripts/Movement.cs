@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
+    public InventoryScript Inv;
+    public  GameObject InvPanel;
+    public DisplayInventory DInv;
     Rigidbody man;
     public Rigidbody dog;
 	public GameObject notEnoughMoney;
@@ -51,6 +54,17 @@ public class Movement : MonoBehaviour
         standingVelocityMan = man.velocity;
         StandingDogVelocity = dogMoveDirection;
 
+    }
+
+    public void SellItems()
+    {
+         DInv = InvPanel.GetComponent<DisplayInventory>();
+        for (int i = 0; i < Inv.Container.Count; i++)
+        {
+            money = money + Inv.Container[i].item.Value;
+            DInv.DestroyUI();
+        }
+        Inv.Container.Clear();
     }
 
     void Update()

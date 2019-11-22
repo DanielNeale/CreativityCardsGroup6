@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class SellableObject : ItemObject
 {
-    public int Value;
     public void Awake()
     {
         type = ItemRarity.Common;
