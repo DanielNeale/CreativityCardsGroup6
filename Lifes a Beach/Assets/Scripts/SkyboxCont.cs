@@ -19,7 +19,7 @@ public class SkyboxCont : MonoBehaviour
     void Start()
     {
         sun.eulerAngles = new Vector3(130, sun.eulerAngles.y, sun.eulerAngles.z);
-        sun.GetComponent<Animation>()["Day Cylce"].speed = 1f;
+        sun.GetComponent<Animation>()["Day Cylce"].speed = 0.3f;
 
         dawn = new Color32(56, 65, 80, 128);
         day = new Color32(60, 93, 145, 128);
