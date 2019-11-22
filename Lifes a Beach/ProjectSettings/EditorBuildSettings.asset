@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/NavMeshTestingScene/MainScene2.unity
     guid: f8423dbd39b2ebe40bf37783333b9d0d
   - enabled: 0
-    path: Assets/Scenes/MainGame.unity
+    path: 
     guid: 28dce4edd5dd2f14f91a7c0aea57d27e
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: caaff81b0295a3b458e80d478d9ca23b
   m_configObjects: {}
