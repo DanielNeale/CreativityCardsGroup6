@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4095995e08b21a043b6b8cb95ec7b6e1, type: 3}
   m_Name: UncommonCoin
   m_EditorClassIdentifier: 
-  Value: 4
+  Value: 10
   prefab: {fileID: 3490157341940124968, guid: b8b189909f9cb8d4f85ef0e95d3b9545, type: 3}
   type: 0
   description: 

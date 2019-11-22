@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4095995e08b21a043b6b8cb95ec7b6e1, type: 3}
   m_Name: CommonShovel
   m_EditorClassIdentifier: 
+  Value: 5
   prefab: {fileID: 6496925413551795614, guid: 944fab9a5abdeb54c91867be1d1d54ae, type: 3}
   type: 0
   description: Ace of spades.
-  Value: 3

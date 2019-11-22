@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4095995e08b21a043b6b8cb95ec7b6e1, type: 3}
   m_Name: RelicCoin
   m_EditorClassIdentifier: 
-  Value: 10
+  Value: 20
   prefab: {fileID: 9181997063925481823, guid: c80a469448133b74d824184aefba2983, type: 3}
   type: 0
   description: 

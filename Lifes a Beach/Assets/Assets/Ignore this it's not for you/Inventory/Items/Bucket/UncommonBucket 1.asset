@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4095995e08b21a043b6b8cb95ec7b6e1, type: 3}
   m_Name: UncommonBucket 1
   m_EditorClassIdentifier: 
-  Value: 2
+  Value: 10
   prefab: {fileID: 9174749033951746361, guid: 86000a5ffe1207e4faf91134d740bafa, type: 3}
   type: 0
   description: 

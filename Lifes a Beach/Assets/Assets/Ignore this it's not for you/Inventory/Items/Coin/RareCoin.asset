@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4095995e08b21a043b6b8cb95ec7b6e1, type: 3}
   m_Name: RareCoin
   m_EditorClassIdentifier: 
+  Value: 15
   prefab: {fileID: 456889975026024093, guid: f1e2d0ffbc9f1b347b38eafafbc9bb13, type: 3}
-  type: 2
+  type: 0
   description: 
-  Value: 0

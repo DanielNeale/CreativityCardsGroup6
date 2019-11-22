@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4095995e08b21a043b6b8cb95ec7b6e1, type: 3}
   m_Name: CommonNail
   m_EditorClassIdentifier: 
+  Value: 5
   prefab: {fileID: 371417061431812046, guid: 858c7d738b7139242905ab040efb2a08, type: 3}
   type: 0
   description: A rusty ass boi.
-  Value: 1

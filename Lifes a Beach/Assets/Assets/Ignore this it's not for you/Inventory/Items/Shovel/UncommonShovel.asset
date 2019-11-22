@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4095995e08b21a043b6b8cb95ec7b6e1, type: 3}
   m_Name: UncommonShovel
   m_EditorClassIdentifier: 
+  Value: 10
   prefab: {fileID: 6579285419701158358, guid: 5e1b9cfba41d0c04783346113ae08af7, type: 3}
-  type: 1
+  type: 0
   description: 
-  Value: 0
