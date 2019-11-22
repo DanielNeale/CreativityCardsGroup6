@@ -2050,6 +2050,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: exitsign
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ec6c13be9802e134fba4c952d686732e, type: 3}
+      propertyPath: m_TagString
+      value: Exit
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec6c13be9802e134fba4c952d686732e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.604
