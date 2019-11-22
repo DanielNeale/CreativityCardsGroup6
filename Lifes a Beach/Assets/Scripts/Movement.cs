@@ -80,6 +80,8 @@ public class Movement : MonoBehaviour
 		moneyText3.text = money.ToString();
         Vector3 moveDirection = new Vector3(0, 0, 0);
 
+        PlayerPrefs.SetInt("Money", money);
+
         // Toby's shoddy fix at dog floating
         if(dog.transform.position.y > 0.32f)
         {
