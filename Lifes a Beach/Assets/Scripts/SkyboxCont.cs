@@ -74,4 +74,9 @@ public class SkyboxCont : MonoBehaviour
             }
         }        
     }
+
+    void OnApplicationQuit()
+    {
+        sky.color = day;
+    }
 }
